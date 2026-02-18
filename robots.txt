@@ -1,0 +1,19 @@
+# robots.txt for Thulasizwe Phetha Portfolio
+
+# Allow all crawlers full access
+User-agent: *
+Allow: /
+
+# Disallow access to specific directories
+Disallow: /libs/
+Disallow: /assets/documents/
+Disallow: /*.json$
+
+# Sitemap location
+Sitemap: https://thulasizwephetha.github.io/portfolio/sitemap.xml
+
+# Crawl delay for polite crawling
+Crawl-delay: 10
+
+# Host
+Host: https://thulasizwephetha.github.io

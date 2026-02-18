@@ -1,0 +1,240 @@
+/* ===== DARK/LIGHT MODE STYLES ===== */
+
+/* Dark Mode (Default) */
+:root {
+    color-scheme: dark;
+}
+
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light Mode Variables */
+body.light-mode {
+    --primary: #0066ff;
+    --secondary: #00d4ff;
+    --accent: #ff0080;
+    --bg: #f0f5ff;
+    --surface: #ffffff;
+    --text: #1a1f36;
+    --text-secondary: #4a5578;
+    --border: rgba(0, 102, 255, 0.15);
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --shadow-sm: 0 5px 20px rgba(0, 102, 255, 0.1);
+    --shadow-md: 0 10px 30px rgba(0, 102, 255, 0.15);
+    --shadow-lg: 0 20px 40px rgba(0, 102, 255, 0.2);
+    
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* Light Mode Navigation */
+body.light-mode .navbar {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+body.light-mode .navbar.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    border-bottom-color: var(--border);
+}
+
+body.light-mode .nav-link {
+    color: var(--text-secondary);
+}
+
+body.light-mode .nav-link:hover,
+body.light-mode .nav-link.active {
+    color: var(--primary);
+}
+
+body.light-mode .mobile-menu-btn span {
+    background: var(--text);
+}
+
+/* Light Mode Cards */
+body.light-mode .project-card,
+body.light-mode .cert-card,
+body.light-mode .timeline-content,
+body.light-mode .contact-form,
+body.light-mode .stat-card,
+body.light-mode .skill-item {
+    background: var(--surface);
+    border-color: var(--border);
+    box-shadow: var(--shadow-sm);
+}
+
+body.light-mode .project-card:hover,
+body.light-mode .cert-card:hover,
+body.light-mode .timeline-content:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Light Mode Text */
+body.light-mode .hero-description,
+body.light-mode .about-text,
+body.light-mode .project-info p,
+body.light-mode .cert-skills,
+body.light-mode .timeline-content ul,
+body.light-mode .contact-info p {
+    color: var(--text-secondary);
+}
+
+/* Light Mode Buttons */
+body.light-mode .btn-outline {
+    color: var(--text);
+    border-color: var(--border);
+    background: transparent;
+}
+
+body.light-mode .btn-outline:hover {
+    background: rgba(0, 102, 255, 0.05);
+    border-color: var(--primary);
+}
+
+body.light-mode .btn-primary {
+    color: white;
+}
+
+/* Light Mode Social Icons */
+body.light-mode .social-icon {
+    background: var(--surface);
+    color: var(--text-secondary);
+    border-color: var(--border);
+}
+
+body.light-mode .social-icon:hover {
+    background: var(--gradient-primary);
+    color: white;
+    border-color: transparent;
+}
+
+/* Light Mode Forms */
+body.light-mode .form-group input,
+body.light-mode .form-group textarea {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: var(--border);
+    color: var(--text);
+}
+
+body.light-mode .form-group input:focus,
+body.light-mode .form-group textarea:focus {
+    background: rgba(0, 102, 255, 0.02);
+    border-color: var(--primary);
+}
+
+body.light-mode .form-group label {
+    color: var(--text-secondary);
+    background: var(--surface);
+}
+
+/* Light Mode Footer */
+body.light-mode .footer {
+    background: rgba(255, 255, 255, 0.95);
+    border-top-color: var(--border);
+}
+
+body.light-mode .footer-social a {
+    background: var(--surface);
+    color: var(--text-secondary);
+    border-color: var(--border);
+}
+
+body.light-mode .footer-social a:hover {
+    background: var(--gradient-primary);
+    color: white;
+    border-color: transparent;
+}
+
+body.light-mode .footer-bottom {
+    border-top-color: rgba(0, 0, 0, 0.05);
+    color: var(--text-secondary);
+}
+
+/* Light Mode Progress Bars */
+body.light-mode .progress-bar {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Light Mode Filters */
+body.light-mode .filter-btn {
+    color: var(--text-secondary);
+    border-color: var(--border);
+}
+
+body.light-mode .filter-btn:hover,
+body.light-mode .filter-btn.active {
+    background: var(--gradient-primary);
+    color: white;
+    border-color: transparent;
+}
+
+/* Light Mode Back to Top */
+body.light-mode .back-to-top {
+    color: white;
+}
+
+/* Light Mode Timeline */
+body.light-mode .timeline::before {
+    background: var(--gradient-primary);
+}
+
+body.light-mode .timeline-dot {
+    background: var(--surface);
+}
+
+/* Light Mode Project Overlay */
+body.light-mode .project-overlay {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* Light Mode Selection */
+body.light-mode ::selection {
+    background: var(--primary);
+    color: white;
+}
+
+/* Light Mode Scrollbar */
+body.light-mode ::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+body.light-mode ::-webkit-scrollbar-thumb {
+    background: var(--gradient-primary);
+}
+
+/* Light Mode Particles */
+body.light-mode #particles-js {
+    opacity: 0.5;
+}
+
+/* Theme Toggle Button Animation */
+.theme-toggle {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(15deg);
+}
+
+.theme-toggle i {
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+body.light-mode .theme-toggle i::before {
+    content: "\f185"; /* sun icon */
+}
+
+body:not(.light-mode) .theme-toggle i::before {
+    content: "\f186"; /* moon icon */
+}
+
+/* Transition for smooth mode switching */
+body * {
+    transition: background-color 0.3s ease,
+                border-color 0.3s ease,
+                color 0.3s ease,
+                box-shadow 0.3s ease;
+}

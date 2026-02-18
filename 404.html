@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Thulasizwe Phetha</title>
+    
+    <!-- Fonts and Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #00d4ff;
+            --secondary: #0066ff;
+            --accent: #ff0080;
+            --bg: #0a0e27;
+            --text: #ffffff;
+            --text-secondary: #b0b8d0;
+        }
+        
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        
+        .background span {
+            position: absolute;
+            font-size: 20vw;
+            font-weight: 800;
+            color: rgba(0, 212, 255, 0.03);
+            white-space: nowrap;
+            user-select: none;
+            animation: float 20s linear infinite;
+        }
+        
+        .background span:nth-child(1) {
+            top: 10%;
+            left: -10%;
+            animation-delay: 0s;
+        }
+        
+        .background span:nth-child(2) {
+            bottom: 20%;
+            right: -10%;
+            font-size: 25vw;
+            animation-delay: -5s;
+            color: rgba(255, 0, 128, 0.03);
+        }
+        
+        @keyframes float {
+            0% { transform: translateX(0) rotate(0deg); }
+            50% { transform: translateX(50px) rotate(5deg); }
+            100% { transform: translateX(0) rotate(0deg); }
+        }
+        
+        .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 2rem;
+            max-width: 600px;
+        }
+        
+        .error-code {
+            font-size: 12rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 3s ease-in-out infinite;
+        }
+        
+        @keyframes glow {
+            0%, 100% { filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.3)); }
+            50% { filter: drop-shadow(0 0 40px rgba(0, 212, 255, 0.6)); }
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        
+        p {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .circuit {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 3rem 0;
+        }
+        
+        .circuit-line {
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .circuit-dot {
+            width: 10px;
+            height: 10px;
+            background: var(--primary);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+            box-shadow: 0 0 20px var(--primary);
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--bg);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--text);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+        }
+        
+        .btn-outline:hover {
+            border-color: var(--primary);
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 8rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+            
+            .buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <span>404</span>
+        <span>ERROR</span>
+    </div>
+    
+    <div class="container">
+        <div class="error-code">404</div>
+        <h1>Page Not Found</h1>
+        <p>Looks like you've ventured into uncharted territory. The page you're looking for doesn't exist or has been moved.</p>
+        
+        <div class="circuit">
+            <span class="circuit-line"></span>
+            <span class="circuit-dot"></span>
+            <span class="circuit-line"></span>
+        </div>
+        
+        <div class="buttons">
+            <a href="/" class="btn btn-primary">
+                <i class="fas fa-home"></i>
+                Back to Home
+            </a>
+            <a href="/#contact" class="btn btn-outline">
+                <i class="fas fa-envelope"></i>
+                Contact Me
+            </a>
+        </div>
+    </div>
+</body>
+</html>
